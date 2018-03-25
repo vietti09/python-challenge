@@ -5,45 +5,31 @@ import numpy as np
 
 df = pd.read_csv('election_data_1.csv')
 
-totalvotes = pd.to_numeric(df.count())
-print(totalvotes)
+totalvotes = len(df)
 
-candidates = pd.to_numeric(df.drop_duplicates('Candidate').count())
+candidates = len(df.drop_duplicates('Candidate'))
 
-print(candidates)
+print("\n Election Results \n --------------------\n",\
+       "Total Votes: " + str(totalvotes),\
+       "\n ---------------------\n",\
+       "\n Total Candidates: " + str(candidates), \
+       "\n \n Candidate Names: \n")
+
+series1 = pd.Series(list(df.drop_duplicates('Candidate').iloc[:,2]))
+
+print(" " + series1)
+
+print("\n \n Candidate Total Votes: \n")
 
 print(df.Candidate.value_counts())
 
+print("\n \n Candidate Vote Counts: \n")
+
 print(df.Candidate.value_counts()/ len(df))
 
+print("\n \n AND THE WINNER IS......\n ........ \n ......\n")
 
-#print(df[:3])
-# print(df['Date'])
+df= df.Candidate.value_counts()
 
-# print(list(df))
-# print(df.iloc[1],[1])
+print(df.iloc[0])
 
-# dateparse = lambda x: pd.datetime.strptime(x, '%b-%y')
-
-# df = pd.read_csv('budget_data_1.csv', parse_dates=['Date'], date_parser=dateparse)
-
-# print(df)
-
-# input1 = input("Continue")
-
-# nummonths = pd.to_numeric(df.drop_duplicates('Date').count())
-
-# print(nummonths)
-
-# df = df.sort_values('Date')
-# rev1 = df.iloc[0,1]
-# print(rev1)
-# df = df.sort_values('Date', ascending=False)
-# rev2 = df.iloc[0,1]
-# print(rev2)
-# totalrev = rev2 - rev1
-# print(totalrev)
-
-# averagerev = totalrev / nummonths
-
-# print(averagerev)
