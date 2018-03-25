@@ -23,7 +23,7 @@ print("\n \n Candidate Total Votes: \n")
 
 print(df.Candidate.value_counts())
 
-print("\n \n Candidate Vote Counts: \n")
+print("\n \n Candidate Vote Percentage: \n")
 
 print(df.Candidate.value_counts()/ len(df))
 
