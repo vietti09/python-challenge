@@ -31,5 +31,7 @@ print("\n \n AND THE WINNER IS......\n ........ \n ......\n")
 
 df= df.Candidate.value_counts()
 
+print(df.index[0])
+
 print(df.iloc[0])
 
