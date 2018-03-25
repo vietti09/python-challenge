@@ -1,0 +1,9 @@
+Financial Analysis 
+ ------------------- 
+Total Number of Months:     41
+ Initial Revenue: $1154293
+ Ending Revenue: $883934
+ Total Revenue: $-270359
+ Average Revenue Per Month: $-6594.12
+ Greatest Increase in Revenue: 1195111
+ Greatest Decrease in Revenue: -1172384
