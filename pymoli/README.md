@@ -2580,3 +2580,85 @@ item_total_purchase_df.head()
 </div>
 
 
+
+
+```python
+item_total_purchase_df['Total Purchase Value'] = item_total_purchase_df['Total Purchase Value'].map("${:,.2f}".format)
+item_total_purchase_df.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Total Purchase Count</th>
+      <th>Purchase Price</th>
+      <th>Total Purchase Value</th>
+    </tr>
+    <tr>
+      <th>Item ID</th>
+      <th>Item Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>34</th>
+      <th>Retribution Axe</th>
+      <td>9</td>
+      <td>$4.14</td>
+      <td>$37.26</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <th>Spectral Diamond Doomblade</th>
+      <td>7</td>
+      <td>$4.25</td>
+      <td>$29.75</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <th>Orenmir</th>
+      <td>6</td>
+      <td>$4.95</td>
+      <td>$29.70</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <th>Singed Scalpel</th>
+      <td>6</td>
+      <td>$4.87</td>
+      <td>$29.22</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <th>Splitter, Foe Of Subtlety</th>
+      <td>8</td>
+      <td>$3.61</td>
+      <td>$28.88</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
