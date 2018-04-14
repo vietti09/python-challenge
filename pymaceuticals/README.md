@@ -751,6 +751,7 @@ zoni_err = pd.DataFrame.sem(vol_time_zoni['Tumor Volume (mm3)'])
 
 
 ```python
+#print scatter plot of tumor volume over time for all drugs
 plt.scatter(timepoints, vol_time_capo['Tumor Volume (mm3)'], marker='v', label="Capomulin")
 plt.errorbar(timepoints,vol_time_capo['Tumor Volume (mm3)'],yerr=capo_err, linestyle='None')
 plt.scatter(timepoints, vol_time_cefta['Tumor Volume (mm3)'], marker='o', label="Ceftamin")
@@ -1340,6 +1341,7 @@ meta_zoni_err = pd.DataFrame.sem(metasite_time_zoni['Metastatic Sites'])
 
 
 ```python
+#print scatter plot of metastatic sites over time for all drugs
 plt.scatter(timepoints, metasite_time_capo['Metastatic Sites'], marker='v', label="Capomulin")
 plt.errorbar(timepoints,metasite_time_capo['Metastatic Sites'],yerr=meta_capo_err, linestyle='None')
 plt.scatter(timepoints, metasite_time_cefta['Metastatic Sites'], marker='o', label="Ceftamin")
@@ -1931,6 +1933,7 @@ surv_zoni_err = pd.DataFrame.sem(survival_rate_zoni['Mouse ID'])
 
 
 ```python
+#print scatter plot of survival rate over time for all drugs
 plt.scatter(timepoints, survival_rate_capo['Mouse ID'], marker='v', label="Capomulin")
 plt.errorbar(timepoints, survival_rate_capo['Mouse ID'],yerr=surv_capo_err, linestyle='None')
 plt.scatter(timepoints, survival_rate_cefta['Mouse ID'], marker='o', label="Ceftamin")
@@ -1966,10 +1969,14 @@ plt.show()
 
 
 ```python
-#set up two blank lists for percent tumor change over time
-#calculate percent change for Capomulin
+#set up two blank lists for percent tumor volume change over time
 pct_chg = []
 drugs=[]
+```
+
+
+```python
+#calculate percent change for Capomulin
 percent_chg_capo = merged_data[merged_data['Drug']=='Capomulin']
 final_vol_capo = percent_chg_capo[percent_chg_capo['Timepoint']==45]
 final_vol_capo = final_vol_capo['Tumor Volume (mm3)'].mean()
@@ -2261,5 +2268,5 @@ plt.show()
 ```
 
 
-![png](output_57_0.png)
+![png](output_58_0.png)
 

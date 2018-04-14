@@ -11,7 +11,7 @@ import seaborn as sns
 #Three trends based on data.
 #Observed Trend 1: There are far more rides counted in urban environments than in suburban or rural.
 #Observed Trend 2: The fares in rural areas are higher, per the bubble plot, than urban or suburban fares.
-#Observed Trend 3: The fares and total number of rides for suburban areas were both between urban and rural numbers.
+#Observed Trend 3: There are considerably more drivers in urban environments than fares.
 ```
 
 
@@ -214,8 +214,10 @@ plt.show()
 
 ```python
 #print third pie chart displaying total drivers by city type
-pie_chart_3 = merged_data.groupby(['type'])
-pie_chart_3 = pie_chart_3['driver_count'].mean()
+pie_chart_3 = merged_data.drop_duplicates(['city'],keep='first')
+pie_chart_3 = pie_chart_3.groupby(['type'])
+pie_chart_3 = pie_chart_3['driver_count'].sum()
+
 pie_chart_3 = pie_chart_3 / len(merged_data)*100
 
 #Pie Chart 3
@@ -224,7 +226,7 @@ colors = ["lightskyblue", "lightcoral", "gold"]
 explode = (0, 0, 0.05)
 
 plt.title("% of Total Drivers by City Type")
-plt.pie(pie_chart_2, explode=explode, labels=pc_2_labels, colors=colors,
+plt.pie(pie_chart_3, explode=explode, labels=pc_3_labels, colors=colors,
         autopct="%1.1f%%", shadow=True, startangle=90)
 plt.axis("equal")
 plt.show()
