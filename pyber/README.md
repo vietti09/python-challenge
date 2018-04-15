@@ -153,7 +153,7 @@ ax.plot([], [], 'o', color='lightskyblue')
 plt.xlabel('Total Number of Rides (Per City)')
 plt.ylabel('Average Fare ($)')
 plt.title('Pyber Ride Sharing Data (2016)')
-plt.text(1.0, 0.5, 'blah', fontsize=10, transform=plt.gcf().transFigure)
+plt.text(1.0, 0.5, 'Note: \nCircle size correlates with\ndriver count per city.', fontsize=10, transform=plt.gcf().transFigure)
 
 
 plt.legend(['Urban', 'Suburban', 'Rural'], scatterpoints = 1, frameon=True,labelspacing=1, ncol = 1, title='City Type')
