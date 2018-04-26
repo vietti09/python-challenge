@@ -100,7 +100,7 @@ news_dataframe = pd.DataFrame({"compound":compound_list,"positive":positive_list
 
 cols = ['tweet source','counter','compound','negative','neutral','positive','text','created_at']
 news_dataframe = news_dataframe[cols]
-news_dataframe.to_csv('news_dataframe', sep='\t')
+news_dataframe.to_csv('news_dataframe.csv', sep='\t')
 news_dataframe.head(1)
 ```
 
@@ -140,12 +140,12 @@ news_dataframe.head(1)
       <th>0</th>
       <td>@CNNbrk</td>
       <td>1</td>
+      <td>-0.6486</td>
+      <td>0.212</td>
+      <td>0.788</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>https://t.co/Jl1GWHC0ct @eBay @youtube @Facebo...</td>
-      <td>Thu Apr 26 23:25:05 +0000 2018</td>
+      <td>RT @cnnbrk: After a 40-year search, authoritie...</td>
+      <td>Thu Apr 26 23:41:12 +0000 2018</td>
     </tr>
   </tbody>
 </table>
@@ -193,23 +193,23 @@ sentiment
   <tbody>
     <tr>
       <th>@BBCBreaking</th>
-      <td>-0.065002</td>
+      <td>-0.064597</td>
     </tr>
     <tr>
       <th>@CBSNews</th>
-      <td>-0.111275</td>
+      <td>-0.104231</td>
     </tr>
     <tr>
       <th>@CNNbrk</th>
-      <td>-0.075938</td>
+      <td>-0.096654</td>
     </tr>
     <tr>
       <th>@foxnews</th>
-      <td>-0.040160</td>
+      <td>-0.029099</td>
     </tr>
     <tr>
       <th>@nytimes</th>
-      <td>-0.175510</td>
+      <td>-0.169531</td>
     </tr>
   </tbody>
 </table>
