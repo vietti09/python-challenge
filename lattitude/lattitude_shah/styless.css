@@ -1,0 +1,98 @@
+
+body {
+  background: whitesmoke;
+}
+
+.navbar{
+  background:white;
+}
+ 
+/*.navbar-collapse {
+  padding: 10px;
+  background: #01B6AD;
+}*/
+
+.navbar-header{
+  background: #01B6AD;
+}
+.navbar-brand{
+  color:white;
+  font-family:serif;
+  font-size: 30px;
+  font-weight:bold;
+}
+
+.navbar li {
+  float: right;
+  display: in-line-block;
+  padding: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 3px;
+  color:gray;
+  list-style-type:none;
+}
+ 
+/* Getting rid of the default link styles here */
+.navbar li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.dropdown-menu{
+  width: 300px;
+  height: 80px;
+  background-color: redwhitesmoke;
+}
+
+.col-md-8{
+  background:white;
+}
+
+.col-md-4{
+  background:white;
+}  
+
+.green{
+  color:#01B6AD;
+  font-family:serif;
+  font-size: 30px; 
+}
+
+#green-small{
+  font-size:20px;
+}
+
+#center{
+  text-align:center;
+  font-size:18px;
+}
+
+#align{
+  background:white; 
+  margin-top:30px;
+}
+
+@media (max-width: 540px){
+  .navbar{
+    background:#01B6AD;
+  }
+  
+  .navbar{
+    float:none;
+    display:none;
+    overflow:hidden;
+  }
+
+  .navbar li{
+    float:none;
+    display:none;
+    overflow:hidden;
+  }
+
+  .col-md-6{
+    display:inline;
+  }
+}
