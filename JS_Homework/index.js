@@ -1,4 +1,4 @@
-Get references to the tbody element, input field, and button
+
 var tbody = document.querySelector("tbody");
 var dateTimeInput = document.querySelector("#datetime");
 var searchBtn = document.querySelector("#search");
