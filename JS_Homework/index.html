@@ -1,47 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>JS Homework</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
-  />
+  <meta charset="utf-8">
+  <title>Geo JSON</title>
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+
+  <!--D3 cdn-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="form-group">
-          <input type="text" class="form-control" id="datetime" placeholder="Datetime">
-          <a id="search" class="btn btn-default">Search!</a>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Datetime</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Country</th>
-              <th>Shape</th>
-              <th>Duration (minutes)</th>
-              <th>Comments</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <script src="data.js" type="text/javascript"></script>
-  <script src="index.js" type="text/javascript"></script>
-</body>
+  <!-- The div where we will inject our map -->
+  <div id="map"></div>
 
+  <!-- Our JS -->
+  <script type="text/javascript" src="logic.js"></script>
+</body>
 </html>
