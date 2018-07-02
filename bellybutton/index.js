@@ -30,11 +30,10 @@ function addDropdown() {
 
 
 
-// Function to create a default pie chart and scatter plot
+// Create pie chart
 function init() {
   console.log("inside init()");
 
-  // default pie chart
   var data = [{
     values: [22, 44, 77, 99],
     labels: ["label 1", "label 2", "label 3", "label 4"],
@@ -55,36 +54,21 @@ function init() {
 
   Plotly.plot("pie", data, layout);
 
-// Create default scatter plot
-var trace1 = {
-    x: [1, 2, 3, 4],
-    y: [10, 11, 12, 13],
-    text: ['A size: 40', 'B size: 60', 'C size: 80', 'D size: 100'],
-    mode: 'markers',
-    hoverinfo: 'text',
-    marker: {
-      color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)', 'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
-      size: [10, 60, 30, 90]
-    }
+  //Create Bubble Chart
+  var bubbleLayout = {
+      margin: { t: 0 },
+      hovermode: 'closest',
+      xaxis: { title: 'OTU ID' }
   };
-
-  var data = [trace1];
-
-  var layout = {
-    margin: {
-      l: 25,
-      r: 200,
-      b: 35,
-      t: 10,
-      pad: 0
-    },
-    xaxis: {title: "OTU ID's"},
-
-    showlegend: false,
-    height: 400,
-    width: 1200
-  };
-
-  Plotly.newPlot('scatterPlot', data, layout);
-
-}
+  var bubbleData = [{
+      x: sampleNames[0]['otu_ids'],
+      y: sampleNames[0]['sample_values'],
+      text: labels,
+      mode: 'markers',
+      marker: {
+          size: sampleNames[0]['sample_values'],
+          color: sampleNames[0]['otu_ids'],
+      }
+  }];
+  var BUBBLE = document.getElementById('bubble');
+  Plotly.plot(BUBBLE, bubbleData, bubbleLayout);
