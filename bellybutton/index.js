@@ -1,11 +1,11 @@
 // Function to add the dropdown for samples
 function addDropdown() {
   console.log("inside addDropdown()");
-  
+
   // put list of sample names into an array
   sampleNames = [];
   // queryURL = 'https://herokuapp.com/names';
-  queryURL = 'http://localhost:5000';
+  queryURL = 'http://127.0.0.1:5000';
   // Take response and assign to sampleNames array
   d3.json(queryURL, function (error, response) {
     if (error) {
@@ -14,7 +14,7 @@ function addDropdown() {
     else {
       sampleNames = response;
 
-      // Add each item as option to dropdown  
+      // Add each item as option to dropdown
       for (var i = 0; i < sampleNames.length; i++) {
         d3.select("#samplesDropdown").append("option")
           .attr("value", sampleNames[i]["name"])
@@ -33,8 +33,8 @@ function addDropdown() {
 // Function to create a default pie chart and scatter plot
 function init() {
   console.log("inside init()");
-  
-  // default pie chart 
+
+  // default pie chart
   var data = [{
     values: [22, 44, 77, 99],
     labels: ["label 1", "label 2", "label 3", "label 4"],
@@ -55,7 +55,7 @@ function init() {
 
   Plotly.plot("pie", data, layout);
 
-// Create default scatter plot 
+// Create default scatter plot
 var trace1 = {
     x: [1, 2, 3, 4],
     y: [10, 11, 12, 13],

@@ -29,7 +29,7 @@ def index():
     return render_template('index.html')
 
 #  create route to return list of sample names
-@app.route("/names", methods=["GET", "POST"])
+@app.route("/names", methods=['POST','GET'])
 def names():
 
     samples_cols_list = Base.classes.samples.__table__.columns.keys()
@@ -37,7 +37,7 @@ def names():
     return jsonify(sample_list)
 
 # create route to return otu for a sample
-@app.route('/otu', methods=["GET", "POST"])
+@app.route('/otu', methods=['POST','GET'])
 def otu():
     otu_desc = session.query(Otu_id.lowest_taxonomic_unit_found).all()
     otu_descriptions = [i[0] for i in otu_desc]

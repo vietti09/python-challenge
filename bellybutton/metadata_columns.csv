@@ -1,6 +1,6 @@
 COLUMN,TYPE,DESCRIPTION
 SAMPLEID,INTEGER,sample_id
-EVENT,TEXT,Collection event 
+EVENT,TEXT,Collection event
 ETHNICITY,TEXT,Ethnicity
 GENDER,TEXT,Gender (male/female)
 AGE,INTEGER,Age (in years)
