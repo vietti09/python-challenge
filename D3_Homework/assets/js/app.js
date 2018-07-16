@@ -28,17 +28,17 @@ d3.csv("data/data.csv", function (err, Data) {
   // Step 1: Parse Data/Cast as numbers
 
   Data.forEach(function (data) {
-    data.poverty = +data.poverty;
-    data.healthcare = +data.healthcare;
+    data.assets = +data.assets;
+    data.capex = +data.capex;
   });
 
   // Step 2: Create scale functions
   var xLinearScale = d3.scaleLinear()
-    .domain([0, d3.max(Data, d => d.poverty)])
+    .domain([0, d3.max(Data, d => d.capex)])
     .range([0, width]);
 
   var yLinearScale = d3.scaleLinear()
-    .domain([0, d3.max(Data, d => d.healthcare)])
+    .domain([0, d3.max(Data, d => d.assets)])
     .range([height, 0]);
 
   // Step 3: Create axis functions
@@ -58,8 +58,8 @@ d3.csv("data/data.csv", function (err, Data) {
   .data(Data)
   .enter()
   .append("circle")
-  .attr("cx", d => xLinearScale(d.poverty))
-  .attr("cy", d => yLinearScale(d.healthcare))
+  .attr("cx", d => xLinearScale(d.assets))
+  .attr("cy", d => yLinearScale(d.capex))
   .attr("r", "15")
   .attr("fill", "blue")
   .attr("opacity", ".5");
@@ -72,12 +72,12 @@ d3.csv("data/data.csv", function (err, Data) {
     .attr("x", 0 - (height / 2))
     .attr("dy", "1em")
     .attr("class", "axisText")
-    .text("Lacks Healthcare (%)");
+    .text("Capex");
 
   chartGroup.append("text")
     .attr("transform", `translate(${width/2}, ${height + margin.top + 30})`)
     .attr("class", "axisText")
-    .text("In Poverty (%)");
+    .text("Assets");
 
   var text = chartGroup.selectAll(null)
     .data(Data)
@@ -85,9 +85,9 @@ d3.csv("data/data.csv", function (err, Data) {
     .append("text");
 
   var textLabels = text
-    .attr("x", d => xLinearScale(d.poverty))
+    .attr("x", d => xLinearScale(d.assets))
     .attr("text-anchor", "middle")
-    .attr("y", d => yLinearScale(d.healthcare))
+    .attr("y", d => yLinearScale(d.capex))
     .text(function(d){return d.abbr});
 
 
@@ -96,7 +96,7 @@ d3.csv("data/data.csv", function (err, Data) {
     .attr("class", "tooltip")
     .offset([80, -60])
     .html(function (d) {
-      return (`${d.abbr}<br>Poverty %: ${d.poverty}<br> % Without Healthcare: ${d.healthcare}`);
+      return (`${d.abbr}<br>Assets: ${d.assets}<br> Capex: ${d.capex}`);
     });
 
   // Step 7: Create tooltip in the chart
