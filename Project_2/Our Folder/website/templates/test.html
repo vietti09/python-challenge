@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown</title>
+</head>
+
+<body>
+
+<script src="/static/d3.v5.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <select name="stock" id="choice" method="GET" action="/">
+    <option value="{{stocks[0]}}" selected=True>{{stocks[0]}}</option>
+    {% for stock in stocks[1:] %}
+      <option value="{{stock}}">{{stock}}</option>
+    {% endfor %}
+  </select>
+
+<script src="/static/jquery-3.3.1.min.js"></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>

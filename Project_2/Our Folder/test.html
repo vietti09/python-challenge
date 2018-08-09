@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown</title>
+</head>
+
+<body>
+
+  <select name="stock" id="choice" method="GET" action="/">
+    <option value="{{stocks[0]}}" selected>{{stocks[0]}}</option>
+    {% for stock in stocks[1:] %}
+      <option value="{{stock}}">{{stock}}</option>
+    {% endfor %}
+  </select>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
