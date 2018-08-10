@@ -1,2 +1,0 @@
-# lattitude.github.io
-Lattitude
